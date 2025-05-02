@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+  </style>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>to do list with ts</title>
+</head>
+
+<body class="winky-rough">
+
+
+
+  <div class="container">
+    <div class="formContent d-none" id="addTap">
+      <button class="close" id="closee">
+        <i class=" fa-solid fa-circle-xmark"></i>
+      </button>
+      <div class="form d-flex flex-column h-50 m-5">
+        <h2 class="m-5 visible" id="titleAdd" >Add Your New Task</h2>
+        <h2 class="m-5 d-none" id="titleUpdate" >Update Your Task</h2>
+        <input type="text" id="input" class="input w-100 mt-3" placeholder="Enter today's mission">
+        <div class="mt-3">
+          <input type="submit" id="add" class="add px-5" value="Add Task">
+          <input type="submit" id="update" class="updatee d-none" value="Updatee Task">
+        </div>
+      </div>
+    </div>
+
+    <div class="head colorLightOrang">
+      <h1 class="nameHead"> To Do List </h1>
+      <p class="qoute">GET YOUR LIFE TOGETHER</p>
+      <img class="img" src="imgs/3d-illustration-people-working-marketing.png" alt="">
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="container-fluid  mt-5 mb-5">
+      <div class="row ">
+        <div class="col-4 box box1">
+          <div class="content m-2">
+            <h5 class="text-center colorLightBlue">New
+              <button class="fs-4 text-white" id="addNew">
+                <i class="fa-solid fa-square-plus"></i>
+              </button>
+            </h5>
+
+            <div>
+              <table class="table newBox">
+                <tbody id="newTableBody" class="table transparent-table">
+                  <tr>
+                    <th scope="row"></th>
+                    <td class="d-flex spac justify-content-between">
+                      <p class="newTitle" id="nameOfNew"> </p>
+                      <!-- <ul class="d-none" id="options">
+                        <li>
+                          <i class=" done fa-solid fa-circle-check"></i>
+                        </li>
+                        <li>
+                          <i class="inprograss fa-solid fa-spinner"></i>
+                        </li>
+                      </ul>
+                      <button onclick="showList()">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                      </button> -->
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 box box2  ">
+          <div class="content m-2">
+            <h5 class="text-center p-1 colorLightBlue">InPrograss</h5>
+            <div class="mov">
+              <table class="table inprograssBox bg-transparent">
+                <tbody id="inprograssTableBody" class="table transparent-table">
+                  <tr>
+                    <th scope="row"></th>
+                    <td class="inprograssTitle" id="nameOfinprograss"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 box box3 ">
+          <div class="content m-2">
+            <h5 class="text-center p-1 colorLightBlue">Completed</h5>
+            <div class="pink">
+              <table class="table completedBox">
+                <tbody id="completedTableBody" class="table transparent-table">
+                  <tr>
+                    <th scope="row"></th>
+                    <td class="completedTitle" id="nameOfcompleted"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="dist/index.js"></script>
+</body>
+</html>

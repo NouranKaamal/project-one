@@ -1,0 +1,178 @@
+.winky-rough{
+    font-family: "Winky Rough", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  } 
+    .transparent-table,
+    .transparent-table tr,
+    .transparent-table td,
+    .transparent-table th,
+    .transparent-table thead,
+    .transparent-table tbody {
+      background-color: transparent !important;
+  }
+  .colorOne{
+    background-color:rgb(255, 136, 73);
+  }
+  .colorTwo{
+    background-color: rgba(105, 190, 40 , 0.5) ;
+  }
+  .colorPink{
+    background-color: rgb(237, 195, 205);
+  }
+  .colorLightPink{
+  background-color: rgba(237, 195, 205,0.7);
+  }
+  .colorOrang{
+    background-color: rgb(236, 115, 30);
+  }
+  .colorLightOrang{
+    background-color:rgba(236, 115, 30,0.4) ;
+  }
+  .colorYellow{
+    background-color: rgb(238, 195, 54);
+  }
+  .colorLightYellow{
+    background-color:rgba(238, 195, 54 , 0.8);
+  }
+  .colorBlue{
+  background-color: rgb(120, 159, 234);
+  }
+  .colorLightBlue{
+    background-color:rgba(120, 159, 234 , 0.8) ;
+  }
+  .inColorBlue{
+    color: #44429E;
+  }
+  .img{
+  width: 30%;
+  height: 30%;
+  float: right;
+  }
+  .clearfix{
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .head{
+    position: relative;
+    border-radius: 5px;
+    padding-right: 15px;
+    padding-left: 30px;
+  }
+  .container {
+  width: 70%;
+  margin-top: 40px;
+  }
+  .nameHead{
+    position: absolute;
+    top: 30%;
+    font-size: 60px; 
+  }
+  .qoute{
+    position: absolute;
+    top:63% ;
+    letter-spacing: 3px;
+    padding-left: 5px;
+  }
+  .close{
+    float: right;
+    font-size: 30px;
+    margin: 15px;
+  }
+  .formContent{
+    background-color: #EDC333;
+    position: absolute;
+    border-radius: 10px;
+    height: 90vh;
+    width: 70%;
+    z-index: 10;
+  }
+  .form {
+      border-radius: 6px;
+      padding: 50px;
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+    }
+  .input {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      flex: 1;
+    }
+  .input:focus {
+      outline: none;
+    }
+  .add {
+      border: none;
+      background-color:rgba(0,0,0, 0.718) ;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .tasks {
+      background-color: rgba(105, 190, 40 , 0.5) ;
+      margin-top: 20px;
+      border-radius: 6px;
+      padding: 20px;
+    }
+    .table .title{
+     font-size: 20px;
+     font-weight: 500;
+    }
+    .done{
+      color: #EDC235;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .update{
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .updatee {
+      border: none;
+      background-color:rgba(0,0,0, 0.718) ;
+      color: white;
+      padding: 9px;
+      border-radius: 6px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .delete{
+      /* color: rgb(255, 136, 73); */
+      color: #EB6C1F;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .inprograss{
+      font-size: 20px;
+    }
+    button{
+      border: none;
+      background-color: transparent;
+    }
+    .transparent-button {
+      background-color: transparent !important;
+      border: none;
+      color: inherit; 
+    }
+  
+  
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 5px solid #ccc;
+      border-top-color: #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
