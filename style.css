@@ -176,3 +176,14 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
+    .dropdown-menu li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .dropdown-item {
+      display: inline-block;
+    }
+    .dropdown-menu{
+      background-color: rgba(0, 0, 0,0.4);
+    }

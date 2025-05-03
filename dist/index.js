@@ -142,33 +142,46 @@ function render() {
     let newBox = "";
     let completedBox = "";
     let inprograssBox = "";
+    let counter = 1;
     for (let i = 0; i < todoList.arrItems.length; i++) {
         const todo = todoList.arrItems[i];
         if (todo.state == "New") {
             newBox += `
          <tr>
         <th scope="row">${i + 1}</th>
-        <td class="title id="title" >${todo.itemName}</td>
-        <td>
-             <button id="" class="myInpro "onclick="inprograss(${i})">
-                <i class="inprograss inpro fa-solid fa-spinner"></i>
-            </button>
-         </td>
-        <td id="check">
-            <button class="myDone "onclick="completed(${i})">
-               <i class=" done fa-solid fa-circle-check"></i>
-            </button>
-        </td>
-        <td>
-            <button onclick="updateItem(${i})"  >
-                <i class="update fa-solid fa-pen-to-square"></i> 
-            </button>           
-        </td>
-        <td>
-            <button onclick="deleteItem(${todo.id})">
-                <i class=" delete fa-solid fa-trash-can"></i> 
-            </button>           
-        </td>
+        <td class="title p-0 m-0" id="title" >${todo.itemName}</td>
+        <td class="p-0 m-0 text-end">
+        <div class="dropdown">
+                        <button class="btn fs-5 m-0 p-0 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <ul class="dropdown-menu p-0 m-0">
+                          <li a class="dropdown-item " >
+                            <button id="" class="myInpro w-100 "onclick="inprograss(${i})">
+                              <i class="inprograss inpro fa-solid fa-spinner"></i>
+                          </button>
+                          </li>
+                          <li a class="dropdown-item  " >
+                            <button class="myDone w-100" onclick="completed(${i})">
+                            <i class=" done fa-solid fa-circle-check"></i>
+                           </button>
+                          </li>
+                          <li a class="dropdown-item  " >
+                             <button onclick="updateItem(${i})" class="w-100" >
+                             <i class="update fa-solid fa-pen-to-square"></i> 
+                             </button> 
+                          </li>
+                          <li a class="dropdown-item" >
+                             <button onclick="deleteItem(${todo.id})" class="w-100">
+                             <i class=" delete fa-solid fa-trash-can"></i> 
+                             </button>  
+                          </li>
+                        </ul>
+                      </div>
+                   </td>
+
+
+
         <tr>
         `;
         }
@@ -176,58 +189,79 @@ function render() {
             completedBox += `
             <tr>
            <th scope="row">${i + 1}</th>
-           <td class="title text-secondary text-decoration-line-through " id="title" >${todo.itemName}</td>
-           <td>
-                <button id="" class="myInpro text-secondary" onclick="inprograss(${i})">
-                   <i class="inprograss text-secondary inpro fa-solid fa-spinner"></i>
-               </button>
-            </td>
-           <td id="check">
+           <td class="title p-0 m-0 text-secondary text-decoration-line-through " id="title" >${todo.itemName}</td>
+          
+           <td id="check" class="p-0 m-0">
                <button class="myDone  text-secondary" onclick="completed(${i})">
                   <i class=" done text-secondary fa-solid fa-circle-check"></i>
                </button>
            </td>
-           <td>
-               <button onclick="updateItem(${i})" >
-                   <i class="update text-secondary fa-solid fa-pen-to-square"></i> 
-               </button>           
-           </td>
-           <td>
-               <button onclick="deleteItem(${todo.id})" >
-                   <i class=" text-secondary delete fa-solid fa-trash-can"></i> 
-               </button>           
-           </td>
-           <tr>
+           <td class="p-0 m-0 text-end">
+           <div class="dropdown">
+            <button class="btn fs-5 m-0 p-0 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="dropdown-menu p-0 m-0 text-end ">
+             <li a class="dropdown-item" >
+              <button id="" class="myInpro text-secondary w-100" onclick="inprograss(${i})">
+                <i class="inprograss text-secondary inpro fa-solid fa-spinner"></i>
+              </button>
+            </li>
+            <li a class="dropdown-item" >
+             <button onclick="updateItem(${i})" class="w-100" >
+               <i class="update text-secondary fa-solid fa-pen-to-square"></i> 
+             </button> 
+             </li>
+            <li a class="dropdown-item" >
+             <button onclick="deleteItem(${todo.id})" class="w-100" >
+              <i class=" text-secondary delete fa-solid fa-trash-can"></i> 
+             </button> 
+            </li>
+          </ul>
+         </div>
+        </td>
+    <tr>
            `;
         }
         if (todo.state == "Inprograss") {
             inprograssBox += `
             <tr>
            <th scope="row">${i + 1}</th>
-           <td class="title id="title" >${todo.itemName}</td>
-           <td>
+           <td class="title m-0 p-0 " id="title" >${todo.itemName}</td>
+           <td class=p-0 m-0 ">
                 <button id="" class="myInpro "onclick="inprograss(${i})">
                    <p class="inprograss inpro spinner"></p>
                </button>
             </td>
-           <td id="check">
-               <button class="myDone "onclick="completed(${i})">
-                  <i class=" done fa-solid fa-circle-check"></i>
-               </button>
-           </td>
-           <td>
-               <button onclick="updateItem(${i})"  >
+           <td class="p-0 m-0 text-end">
+           <div class="dropdown">
+  <button class="btn fs-5 m-0 p-0 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  <ul class="dropdown-menu p-0 m-0">
+    <li a class="dropdown-item" >
+      <button class="myDone w-100 "onclick="completed(${i})">
+        <i class=" done fa-solid fa-circle-check"></i>
+     </button>
+    </li>
+     <li a class="dropdown-item" >
+      <button onclick="updateItem(${i})" class="w-100" >
                    <i class="update fa-solid fa-pen-to-square"></i> 
-               </button>           
-           </td>
-           <td>
-               <button onclick="deleteItem(${todo.id})">
-                   <i class=" delete fa-solid fa-trash-can"></i> 
-               </button>           
+               </button>   
+    </li>
+    <li a class="dropdown-item" >
+      <button onclick="deleteItem(${todo.id})" class="w-100">
+        <i class=" delete fa-solid fa-trash-can"></i> 
+    </button>   
+    </li>
+  </ul>
+</div>
+
            </td>
            <tr>
            `;
         }
+        counter += 1;
     }
     document.getElementById("newTableBody").innerHTML = newBox;
     document.getElementById("completedTableBody").innerHTML = completedBox;

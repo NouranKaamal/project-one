@@ -63,17 +63,28 @@
                     <th scope="row"></th>
                     <td class="d-flex spac justify-content-between">
                       <p class="newTitle" id="nameOfNew"> </p>
-                      <!-- <ul class="d-none" id="options">
-                        <li>
-                          <i class=" done fa-solid fa-circle-check"></i>
-                        </li>
-                        <li>
-                          <i class="inprograss fa-solid fa-spinner"></i>
-                        </li>
-                      </ul>
-                      <button onclick="showList()">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                      </button> -->
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li a class="dropdown-item" >
+                            <button id="" class="myInpro "onclick="inprograss(${i})">
+                              <i class="inprograss inpro fa-solid fa-spinner"></i>
+                          </button>
+                          </li>
+                          <li a class="dropdown-item" >
+                            <button id="" class="myInpro "onclick="inprograss(${i})">
+                              <i class="inprograss inpro fa-solid fa-spinner"></i>
+                          </button>
+                          </li>
+                          <li a class="dropdown-item" >
+                            <button id="" class="myInpro "onclick="inprograss(${i})">
+                              <i class="inprograss inpro fa-solid fa-spinner"></i>
+                          </button>
+                          </li>
+                        </ul>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -115,6 +126,24 @@
     </div>
   </div>
 
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="dist/index.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
