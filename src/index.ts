@@ -131,11 +131,17 @@ add.addEventListener('click', function () {
  }
  
 )
-// input.addEventListener("keydown", function (event) {
-//     if (event.key === "Enter") {
-//         add.click();
-//     }
-//   });
+input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        if (updateStat== -1){
+            add.click();
+        }
+        if(updateStat== 1){
+            update.click();
+        }
+        
+    }
+  });
 function render() : void {
     let newBox = "";
     let completedBox = "";
@@ -242,8 +248,10 @@ function deleteItem(id : number) : void{
     }
 }
 let updateIndex : number = -1 ;
+let updateStat : number = -1;
 function updateItem ( index : number ) : void {
     updateIndex = index;
+    updateStat = 1;
     todoList.setValueInInput(index);
     update.classList.remove("d-none");
     add.classList.add("d-none");
@@ -262,7 +270,8 @@ update.addEventListener('click', function () {
     titleAdd.classList.remove("d-none");
     titleUpdate.classList.add("d-none");
     input.value= "";
-    updateIndex = -1
+    updateIndex = -1;
+    updateStat= -1;
 })
 function completed(index:number){
     todoList.completed(index);

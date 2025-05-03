@@ -128,11 +128,16 @@ add.addEventListener('click', function () {
         alert("the task name must be more than one character and less than 30 character");
     }
 });
-// input.addEventListener("keydown", function (event) {
-//     if (event.key === "Enter") {
-//         add.click();
-//     }
-//   });
+input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        if (updateStat == -1) {
+            add.click();
+        }
+        if (updateStat == 1) {
+            update.click();
+        }
+    }
+});
 function render() {
     let newBox = "";
     let completedBox = "";
@@ -238,8 +243,10 @@ function deleteItem(id) {
     }
 }
 let updateIndex = -1;
+let updateStat = -1;
 function updateItem(index) {
     updateIndex = index;
+    updateStat = 1;
     todoList.setValueInInput(index);
     update.classList.remove("d-none");
     add.classList.add("d-none");
@@ -260,6 +267,7 @@ update.addEventListener('click', function () {
     titleUpdate.classList.add("d-none");
     input.value = "";
     updateIndex = -1;
+    updateStat = -1;
 });
 function completed(index) {
     todoList.completed(index);
