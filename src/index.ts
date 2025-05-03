@@ -6,18 +6,16 @@ const titleUpdate = document.getElementById("titleUpdate")as HTMLElement;
 const closee = document.getElementById("closee")as HTMLButtonElement;
 const addTap = document.getElementById("addTap")as HTMLElement;
 const addNew = document.getElementById("addNew") as HTMLButtonElement;
+
 const localStorageProp = 'arrItems';
 type State = "New" | "Inprograss" |"Completed";
+
 class Todo {
     itemName:string;
-    completed:boolean;
-    inprograss:boolean;
     state:State;
     id:number;
     constructor(itemName:string){
         this.itemName = itemName;
-        this.completed = false;
-        this.inprograss=false;
         this.state ='New';
         this.id=Date.now();
     }
@@ -40,17 +38,17 @@ class TodoList {
         }
     }
     transition(i:number) {
-            if(this.arrItems[i].inprograss== false && this.arrItems[i].completed== false){
-                return this.arrItems[i].state = "New" ;
-            }
-            if(this.arrItems[i].completed== true && this.arrItems[i].inprograss== false){
-               return this.arrItems[i].state = "Completed" ;
-            }
-            if(this.arrItems[i].inprograss== true && this.arrItems[i].completed== false){
-               return this.arrItems[i].state = "Inprograss"
-            }else{
-                return;
-            }
+            // if(this.arrItems[i].inprograss== false && this.arrItems[i].completed== false){
+            //     return this.arrItems[i].state = "New" ;
+            // }
+            // if(this.arrItems[i].completed== true && this.arrItems[i].inprograss== false){
+            //    return this.arrItems[i].state = "Completed" ;
+            // }
+            // if(this.arrItems[i].inprograss== true && this.arrItems[i].completed== false){
+            //    return this.arrItems[i].state = "Inprograss"
+            // }else{
+            //     return;
+            // }
     }
     validate(){
         if(input.value.length>1 && input.value.length < 30){
@@ -82,32 +80,28 @@ class TodoList {
         render();
     }
     completed(index:number){
-        if(!this.arrItems[index].completed){
-            this.arrItems[index].completed = true;
-            this.arrItems[index].inprograss = false;
-            this.transition(index);
+        if(this.arrItems[index].state != 'Completed'){
+            this.arrItems[index].state = 'Completed'
+            //this.transition(index);
             localStorage.setItem(localStorageProp, JSON.stringify(this.arrItems));
             render();
         }else{
-            this.arrItems[index].completed = false;
-            this.arrItems[index].inprograss = false;
-            this.transition(index);
+            this.arrItems[index].state = 'New'
+            //this.transition(index);
             localStorage.setItem(localStorageProp, JSON.stringify(todoList.arrItems));
             render();
         }
         console.log(this.arrItems[index])
     }
     inprograss(index:number){
-        if(!this.arrItems[index].inprograss){
-            this.arrItems[index].inprograss = true;
-            this.arrItems[index].completed = false;
-            this.transition(index);
+        if(this.arrItems[index].state != 'Inprograss'){
+            this.arrItems[index].state = 'Inprograss'
+            //this.transition(index);
             localStorage.setItem(localStorageProp, JSON.stringify(this.arrItems));
             render();
         }else{
-            this.arrItems[index].inprograss = false;
-            this.arrItems[index].completed = false;
-            this.transition(index);
+            this.arrItems[index].state = 'New'
+            //this.transition(index);
             localStorage.setItem(localStorageProp, JSON.stringify(this.arrItems));
             render();
         };
